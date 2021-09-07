@@ -1,0 +1,177 @@
+body {
+  background: linear-gradient(45deg, cornflowerblue, #eaf280);
+  font-size: 16px;
+}
+
+.header {
+  color: cornflowerblue;
+}
+
+#parent {
+  width: 1000px;
+  height: auto;
+  margin: 5px auto;
+  background: lightslategray;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+#header-parent {
+  width: 300px;
+  margin: 10px auto;
+}
+
+#header-parent h1 {
+  display: inline-block;
+}
+
+#header-parent button {
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  background: #eaf280;
+  border: none;
+  position: relative;
+  border-radius: 5px;
+  top: -5px;
+}
+
+#left-child,
+#right-child {
+  width: 100%;
+  min-height: 500px;
+}
+
+#left-child {
+  background: #e2e894;
+}
+
+#right-child {
+  background: cornflowerblue;
+}
+
+#snippet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+#snippet pre {
+  white-space: pre-line;
+  padding: 10px;
+  min-width: 300px;
+  margin: 10px auto;
+  border: 2px dotted black;
+  min-height: 100px;
+  background: cornflowerblue;
+}
+
+#stack {
+  min-height: 90%;
+  width: 90%;
+  margin: 20px auto;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.stack-child {
+  width: 400px;
+  padding: 15px;
+  margin: 15px;
+  background: yellow;
+  text-align: center;
+  opacity: 0;
+}
+
+#stack-child-0 {
+  align-self: center;
+  margin-bottom: auto;
+  line-height: 0px;
+}
+
+#stack-child-1 {
+  animation: pop-up 1500ms normal 4s;
+}
+
+#stack-child-2 {
+  animation: pop-up 4000ms normal 3s;
+}
+
+#stack-child-3 {
+  animation: pop-up 6600ms normal 2s;
+}
+
+#stack-child-4 {
+  animation: pop-up 8800ms normal 1s;
+}
+
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#stack-child-23 {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  animation: pop-up-s 900ms normal 6s;
+}
+
+@keyframes pop-up-s {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 22px;
+    opacity: 0.8;
+    padding: 15px;
+    margin: 15px;
+  }
+}
+
+img {
+  position: relative;
+  bottom: 0;
+  left: 25px;
+  animation: go-up-down 6500ms normal 1s;
+}
+
+@keyframes go-up-down {
+  0% {
+    bottom: 0px;
+  }
+  15% {
+    bottom: 100px;
+  }
+  30% {
+    bottom: 250px;
+  }
+  45% {
+    bottom: 400px;
+  }
+  60% {
+    bottom: 550px;
+  }
+  75% {
+    bottom: 400px;
+  }
+  88% {
+    bottom: 250px;
+  }
+  100% {
+    bottom: 100px;
+  }
+}

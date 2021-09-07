@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Event Loop</title>
+</head>
+<body>
+    <div id="header-parent">
+        <h1 class="header">Call Stack</h1>
+        <button onclick="javascript: window.location.reload()">Reload Animation</button>  
+    </div>
+    <div id="parent">        
+        <div id="left-child">
+            <div id="snippet">
+                <pre>
+                    function multiply(a,b) {
+                        &nbsp;&nbsp;&nbsp;return a+b;
+                    }
+                </pre>
+                <pre>
+                    function square(n) {
+                        &nbsp;&nbsp;&nbsp;return multiply(n, n)
+                    }
+                </pre>
+                <pre>
+                    function printSquare(n) {
+                        &nbsp;&nbsp;&nbsp;let squared = square(n)
+                        &nbsp;&nbsp;&nbsp;console.log(squared)
+                    }
+                </pre>
+                <pre>
+                    printSquare(4);
+                </pre>
+                <img src="./right-arrow.svg" width="50px">
+            </div>
+        </div>
+        <div id="right-child">
+            <div id="stack">
+                <div id="stack-child-0"><h1>Stack</h2></div>
+                <div class="stack-child" id="stack-child-1">multiply(4,4)</div>
+                <div class="stack-child" id="stack-child-2">square(4)</div>
+                <div class="stack-child" id="stack-child-23">console.log(16)</div>
+                <div class="stack-child" id="stack-child-3">printSquare(4)</div>
+                <div class="stack-child" id="stack-child-4">main()</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
