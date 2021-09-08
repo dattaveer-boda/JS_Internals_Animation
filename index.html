@@ -10,7 +10,12 @@
 <body>
     <div id="header-parent">
         <h1 class="header">Call Stack</h1>
-        <button onclick="javascript: window.location.reload()">Reload Animation</button>  
+        <button onclick="javascript: window.location.reload()" >Reload Animation</button>  
+        <label class="toggle">
+            <input type="checkbox" id="toggleChk">
+            <span class="slider round"></span>
+        </label>
+        <h2 id="modeText">Dark Mode</h2>
     </div>
     <div id="parent">        
         <div id="left-child">
@@ -48,5 +53,14 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById("toggleChk").addEventListener('click', function(event){
+            if(event.target.checked) {
+                document.getElementsByTagName('body')[0].style.background='#242526';
+            } else {
+                document.getElementsByTagName('body')[0].style.background = 'ghostwhite';
+            }
+        })
+    </script>
 </body>
 </html>
