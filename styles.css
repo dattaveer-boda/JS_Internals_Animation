@@ -123,7 +123,7 @@ body {
 }
 
 #stack-child-4 {
-  animation: pop-up 11000ms normal 2s;
+  animation: pop-up 10900ms normal 2s;
 }
 
 @keyframes pop-up {
@@ -239,4 +239,8 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
+}
+
+.center {
+  text-align: center;
 }

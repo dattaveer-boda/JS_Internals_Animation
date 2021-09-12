@@ -19,6 +19,7 @@
     </div>
     <div id="parent">        
         <div id="left-child">
+            <p class="center">Note: Animation has 2 seconds delay start </p>
             <div id="snippet">
                 <pre>
                     function multiply(a,b) {
@@ -54,11 +55,23 @@
         </div>
     </div>
     <script>
+        let $body, $checkBox;
+        window.onload = function() {
+            $body = document.getElementsByTagName('body')[0];
+            $checkBox = document.getElementById("toggleChk");
+            if(localStorage.getItem("colorCode")) {
+                let color = localStorage.getItem('colorCode');
+                $body.style.background = color;
+                $checkBox.checked = color === "#242526"; 
+            }
+        }
         document.getElementById("toggleChk").addEventListener('click', function(event){
             if(event.target.checked) {
-                document.getElementsByTagName('body')[0].style.background='#242526';
+                $body.style.background='#242526';
+                localStorage.setItem('colorCode', "#242526");
             } else {
-                document.getElementsByTagName('body')[0].style.background = 'ghostwhite';
+                $body.style.background = 'ghostwhite';
+                localStorage.setItem('colorCode', "ghostwhite");
             }
         })
     </script>
